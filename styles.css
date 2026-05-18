@@ -1,0 +1,147 @@
+body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Inter', sans-serif;
+ background-color: #f1f5f9;
+}
+
+.nav-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    background-color: #EEF0FF ;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+li {
+    list-style-type: none;
+   
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #2563EB;
+}
+
+
+heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  
+}
+
+#logo {
+   width: 75px;
+   border-radius: 50%;
+   border: 2px solid #ccc;
+   height: auto;
+}
+.profile-card {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 300px;
+    border-radius: 1px  #ccc;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.star-icon {
+    color: #346EF6;
+    font-size: 24px;
+    font-variation-settings: 'FILL' 1;
+}
+
+.rating-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 10px;
+  width: 50px;
+  
+  background-color: #DBE1FF;
+  border-radius: 50px;
+}
+
+.location-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.location-icon {
+     font-size: 18px;
+     color: #666666;
+}
+
+address {
+    font-size: normal;
+    font-size: 14px;
+    margin: 0;
+    color: #333333;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-top: 25px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+}
+.base-rate {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+}
+
+.price {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.button {
+    padding: 10px 25px;
+    background-color: #EEF0FF;
+    color: #0056b3;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    
+}
