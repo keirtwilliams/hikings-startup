@@ -41,20 +41,14 @@ heading {
     gap: 10px;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  
-}
 
-#logo {
+.logo {
    width: 75px;
    border-radius: 50%;
    border: 2px solid #ccc;
    height: auto;
 }
+
 .profile-card {
     padding: 10px;
     border: 1px solid #ccc;
@@ -65,30 +59,6 @@ main {
     background-color: #FFFFFF;
 }
 
-.rating-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.star-icon {
-    color: #346EF6;
-    font-size: 24px;
-    font-variation-settings: 'FILL' 1;
-}
-
-.rating-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  padding: 5px 10px;
-  width: 50px;
-  
-  background-color: #DBE1FF;
-  border-radius: 50px;
-}
 
 .location-container {
     display: flex;
@@ -144,4 +114,12 @@ address {
     border-radius: 10px;
     font-weight: 600;
     
+}
+
+
+#cardsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

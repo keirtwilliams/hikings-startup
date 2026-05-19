@@ -32,105 +32,27 @@
         <input type="text" id="search-bar" name="searchbar" placeholder="Search porters or districts...">
     </heading>
 
-    <main>
-
-      <article class="profile-card">
-    <div class="rating-container">
-    <img src="/images/favicon.svg" alt="picture1" id="logo">
-    
-    <div class="rating-box">
-    <span class="material-symbols-outlined star-icon">star</span>
-      <span class="ratings-text">4.9</span>
-    </div>
-    </div>
-    <h2>Maria Santos</h2>
-    <div class="location-container">
-     <span class="material-symbols-outlined location-icon">location_on</span>
-     <address>Jaro Plaza, Jaro</address>
-     </div>
-     
-     <div class="card-footer">
-        <div class="price-container">
-     <p class="base-rate">Base Rate</p>
-     <p class="price">PHP 50</p>
-     </div>
-     <a class="button" href="">Request</a>
-     </div>
-   </article>
-
-     <article class="profile-card">
-    <div class="rating-container">
-    <img src="/images/favicon.svg" alt="picture1" id="logo">
-    
-    <div class="rating-box">
-    <span class="material-symbols-outlined star-icon">star</span>
-      <span class="ratings-text">4.9</span>
-    </div>
-    </div>
-    <h2>Maria Santos</h2>
-    <div class="location-container">
-     <span class="material-symbols-outlined location-icon">location_on</span>
-     <address>Jaro Plaza, Jaro</address>
-     </div>
-     
-     <div class="card-footer">
-        <div class="price-container">
-     <p class="base-rate">Base Rate</p>
-     <p class="price">PHP 50</p>
-     </div>
-     <a class="button" href="">Request</a>
-     </div>
-   </article>
-
-     <article class="profile-card">
-    <div class="rating-container">
-    <img src="/images/favicon.svg" alt="picture1" id="logo">
-    
-    <div class="rating-box">
-    <span class="material-symbols-outlined star-icon">star</span>
-      <span class="ratings-text">4.9</span>
-    </div>
-    </div>
-    <h2>Maria Santos</h2>
-    <div class="location-container">
-     <span class="material-symbols-outlined location-icon">location_on</span>
-     <address>Jaro Plaza, Jaro</address>
-     </div>
-     
-     <div class="card-footer">
-        <div class="price-container">
-     <p class="base-rate">Base Rate</p>
-     <p class="price">PHP 50</p>
-     </div>
-     <a class="button" href="">Request</a>
-     </div>
-   </article>
-
    
-     <article class="profile-card">
-    <div class="rating-container">
-    <img src="/images/favicon.svg" alt="picture1" id="logo">
-    
-    <div class="rating-box">
-    <span class="material-symbols-outlined star-icon">star</span>
-      <span class="ratings-text">4.9</span>
-    </div>
-    </div>
-    <h2>Maria Santos</h2>
-    <div class="location-container">
-     <span class="material-symbols-outlined location-icon">location_on</span>
-     <address>Jaro Plaza, Jaro</address>
-     </div>
-     
-     <div class="card-footer">
-        <div class="price-container">
-     <p class="base-rate">Base Rate</p>
-     <p class="price">PHP 50</p>
-     </div>
-     <a class="button" href="">Request</a>
-     </div>
-   </article>
 
-    </main>
+    <form id="record-form">
+       <div class="add-Container">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="text" id="location" name="location" placeholder="Location (e.g., Iloilo City)" required>
+          
+        <input type="url" id="imageUrl" name="imageUrl"placeholder="Paste Image URL" required>
+          <input type="number" id="num" name="num" placeholder="Rate in PHP" min="0" required>
+        <button type="submit">Add Record</button>
+        
+       </div>
+       
+
+
+      <div id="cardsContainer">
+            
+      </div>
+      
+    </form>
+    <script src="script.js"></script>
+
 </body>
 </html>
