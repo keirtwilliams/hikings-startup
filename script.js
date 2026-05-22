@@ -4,21 +4,24 @@ let porterRecords = [
         fullName: "John Doe",
         location: "Igbaras, Iloilo",
         pesoRate: "550",
-        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=John"
+        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=John",
+        request: "https://www.facebook.com/profile.php?id=61589700432011",
     },
     {
          id: 1753266291000,
         fullName: "Jane Jane",
         location: "Antique, Iloilo",
         pesoRate: "700",
-        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=Jane"
+        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=Jane",
+         request: "https://www.facebook.com/profile.php?id=61589700432011",
     },
        {
          id: 1716467255122,
         fullName: "Mike Key",
         location: "Tubungan, Iloilo",
         pesoRate: "1000",
-        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=Mike"
+        imageUrl: "https://api.dicebear.com/9.x/avataaars/svg?seed=Mike",
+         request: "https://www.facebook.com/profile.php?id=61589700432011",
        }
 ];
 
@@ -42,7 +45,7 @@ const renderCards  = () => {
      <p class="base-rate">Base Rate</p>
      <p class="price">PHP ${porters.pesoRate}</p>
      </div>
-     <a class="button" href="">Request</a>
+     <a class="button" href="${porters.request}">Request</a>
      </div>
    </article>`
       }).join('');
@@ -58,19 +61,21 @@ addForm.addEventListener('submit', (event) => {
     const porterLocation = document.getElementById('location').value;
     const porterImage = document.getElementById('imageUrl').value;
     const porterRate = document.getElementById('num').value;
+    const porterRequest = document.getElementById('porterRequest').value;
 
-    const newArray = 
-        {
+    const newArray = {
+    
             id: Date.now(),
             fullName: porterName,
             location: porterLocation,
             pesoRate: porterRate,
             imageUrl: porterImage,
+            request: porterRequest
         }
    
        porterRecords.push(newArray);
        console.log('Updated database:', porterRecords);
-
+   
 renderCards();
 addForm.reset();
 });

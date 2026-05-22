@@ -25,40 +25,52 @@
           </ul>
     
     </nav>
-    <div class="search-container">
- <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" id="search-bar" name="searchbar" placeholder="Search porters or districts...">
-</div>
+
     <heading>
         <div class="main-heading">
             <h1>Available Porters</h1>
             <p>Showing porters ready to assist you in Iloilo.</p>
-           
+               <div class="search-container">
+ <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" id="search-bar" name="searchbar" placeholder="Search porters or districts...">
+</div>
         </div>
-        
-        
-        
     </heading>
 
 
-    <form id="record-form">
-       <div class="add-Container">
-        <input type="text" id="name" name="name" placeholder="Name" required>
-        <input type="text" id="location" name="location" placeholder="Location (e.g., Iloilo City)" required>
-          
-        <input type="url" id="imageUrl" name="imageUrl"placeholder="Paste Image URL" required>
-          <input type="number" id="num" name="num" placeholder="Rate in PHP" min="0" required>
-        <button type="submit">Add Record</button>
+    <main class="page-wrapper">
+    <form id="record-form" class="card-form">
+        <h2>Add Porter</h2>
         
-       </div>
-       
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Maria Santos" required>
+        </div>
+        <div class="input-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="e.g. Iloilo City" required>
+        </div>  
+        <div class="input-group">
+            <label for="imageUrl">Profile Image</label>
+            <input type="url" id="imageUrl" name="imageUrl" placeholder="Paste Image URL" required>
+        </div>
+        <div class="input-group">
+            <label for="num">Rate in PHP</label>
+            <input type="number" id="num" name="num" placeholder="0" min="0" required>
+        </div>   
+        <div class="input-group">
+            <label for="porterRequest">Porter Link</label>
+            <input type="url" id="porterRequest" name="porterRequest" placeholder="Paste Porter Link/Profile">
+        </div>
+        <button class="submit-btn" type="submit">Add Record</button>
+    </form>
+</main>
 
-
-      <div id="cardsContainer">
+         <div id="cardsContainer">
             
       </div>
       
-    </form>
+
     <script src="script.js"></script>
 
 </body>
