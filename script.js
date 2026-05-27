@@ -30,9 +30,11 @@ let porterRecords = [
 
 const renderCards  = () => {
       const porterArray = porterRecords.map((porters) => {
-           return `<article class="profile-card">
+           return `<article class="profile-card" data-id="${porters.id}">
     <div class="rating-container">
     <img src="${porters.imageUrl}" alt="picture" class="logo">
+    <button class="delete-btn">Delete</button>
+      <button class="edit-btn">Edit</button>
     </div>
     <h2>${porters.fullName}</h2>
     <div class="location-container">
@@ -53,6 +55,16 @@ const renderCards  = () => {
       cardsContainer.innerHTML = porterArray;
 }
 
+cardsContainer.addEventListener('click',(event) => {
+    if(event.target.classList.contains('delete-btn')){
+         const card = event.target.closest('.profile-card');
+         const idToDel = Number(card.dataset.id);   
+         porterRecords = porterRecords.filter((record) => record.id !== idToDel);
+         renderCards();
+    } 
+    
+    renderCards();
+});
 
 addForm.addEventListener('submit', (event) => {
     event.preventDefault();
