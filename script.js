@@ -1,3 +1,4 @@
+let currentEditId = null;
 let porterRecords = [
     {
         id: 1716164291000,
@@ -55,16 +56,6 @@ const renderCards  = () => {
       cardsContainer.innerHTML = porterArray;
 }
 
-cardsContainer.addEventListener('click',(event) => {
-    if(event.target.classList.contains('delete-btn')){
-         const card = event.target.closest('.profile-card');
-         const idToDel = Number(card.dataset.id);   
-         porterRecords = porterRecords.filter((record) => record.id !== idToDel);
-         renderCards();
-    } 
-    
-    renderCards();
-});
 
 addForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -75,8 +66,9 @@ addForm.addEventListener('submit', (event) => {
     const porterRate = document.getElementById('num').value;
     const porterRequest = document.getElementById('porterRequest').value;
 
-    const newArray = {
-    
+
+        if(currentEditId == null){
+              const newArray = {
             id: Date.now(),
             fullName: porterName,
             location: porterLocation,
@@ -84,12 +76,51 @@ addForm.addEventListener('submit', (event) => {
             imageUrl: porterImage,
             request: porterRequest
         }
-   
-       porterRecords.push(newArray);
+            porterRecords.push(newArray);
+        } else {
+
+          const recordToUpdate = porterRecords.find((record) => record.id === currentEditId);
+        
+            recordToUpdate.fullName = porterName;
+            recordToUpdate.location =  porterLocation;
+            recordToUpdate.pesoRate = porterRate;
+            recordToUpdate.imageUrl = porterImage;
+            recordToUpdate.request  = porterRequest
+        
+            currentEditId = null;
+        }
        console.log('Updated database:', porterRecords);
    
 renderCards();
 addForm.reset();
+});
+
+cardsContainer.addEventListener('click',(event) => {
+    if(event.target.classList.contains('delete-btn')){
+
+         const card = event.target.closest('.profile-card');
+
+         const idToDel = Number(card.dataset.id);   
+
+         porterRecords = porterRecords.filter((record) => record.id !== idToDel);
+         renderCards();
+    } else if (event.target.classList.contains('edit-btn')){
+
+         const card = event.target.closest('.profile-card');
+
+         const idToEdit = Number(card.dataset.id);  
+
+           currentEditId = idToEdit;
+
+         const foundPorter = porterRecords.find((record) => record.id === idToEdit);
+           document.getElementById('name').value = foundPorter.fullName;
+           document.getElementById('location').value = foundPorter.location;
+           document.getElementById('num').value = foundPorter.pesoRate;
+           document.getElementById('imageUrl').value = foundPorter.imageUrl;
+           document.getElementById('porterRequest').value = foundPorter.request;
+    }
+   
+    renderCards();
 });
 
 renderCards();
